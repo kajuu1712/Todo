@@ -1,0 +1,121 @@
+
+body, h1, ul, li, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FFFDEC; /* Light cream background */
+    color: #333;
+}
+
+.todoBody {
+    width: 95%;
+    max-width: 360px;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.inpTask {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task {
+    flex-grow: 1;
+    padding: 12px;
+    border: 2px solid #FFCFCF; /* Light red border */
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #FFFDEC; /* Light cream */
+}
+
+.task::placeholder {
+    color: #FFCFCF; /* Light red placeholder text */
+}
+
+.btns {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #FFFDEC; /* Light cream text */
+    background-color: #86A788; /* Green */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btns:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.addTask {
+    flex-shrink: 0;
+}
+
+.showTodos ul {
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.showTodos ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #FFCFCF; /* Light red background for tasks */
+    border: 1px solid #FFE2E2;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    font-size: 14px;
+    text-align: left;
+}
+
+.rmvAllTask {
+    width: 100%;
+    background-color: #86A788; /* Green */
+    color: #FFFDEC; /* Light cream text */
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.rmvAllTask:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Checkbox Styling */
+.showTodos ul li input[type="checkbox"] {
+    accent-color: #86A788; /* Green when checked */
+}
+
+/* Scrollbar styling for mobile */
+.showTodos ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+.showTodos ul::-webkit-scrollbar-thumb {
+    background-color: #86A788; /* Green scrollbar thumb */
+    border-radius: 8px;
+}
+
+.showTodos ul::-webkit-scrollbar-track {
+    background-color: #FFE2E2; /* Soft pink scrollbar track */
+}
