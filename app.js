@@ -32,9 +32,11 @@ ul.addEventListener("click", (event) => {
         rmvAllTask.style.opacity = "0.5";
 
     //check and cut the task
+    let itsLabel = event.target.nextElementSibling;
     if(event.target.checked == true){
-       let itsLabel = event.target.nextElementSibling;
        itsLabel.style.textDecoration = "line-through";
+    }else {
+        itsLabel.style.textDecoration = "none";
     }
 });
 //remove all task
