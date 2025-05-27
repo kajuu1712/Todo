@@ -21,24 +21,25 @@ function addTodo(task, itemNo) {
 }
 
 ul.addEventListener("click", (event) => {
-    //remove the task
-   
-    if(event.target.classList.contains("rmvTask")){
+    // Remove the task
+    if (event.target.classList.contains("rmvTask")) {
         let itsLi = event.target.parentElement;
         itsLi.remove();
+
+        if (ul.childElementCount === 0) {
+            rmvAllTask.style.opacity = "0.5";
+        }
     }
 
-    if(ul.childElementCount == 0)
-        rmvAllTask.style.opacity = "0.5";
-
-    //check and cut the task
-    let itsLabel = event.target.nextElementSibling;
-    if(event.target.checked == true){
-       itsLabel.style.textDecoration = "line-through";
-    }else {
-        itsLabel.style.textDecoration = "none";
+    // Check and cut the task
+    if (event.target.type === "checkbox") {
+        let label = document.querySelector(`label[for="${event.target.id}"]`);
+        if (label) {
+            label.style.textDecoration = event.target.checked ? "line-through" : "none";
+        }
     }
 });
+
 //remove all task
 rmvAllTask.addEventListener("click", () => {
     ul.innerHTML = "";
