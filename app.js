@@ -30,14 +30,6 @@ ul.addEventListener("click", (event) => {
             rmvAllTask.style.opacity = "0.5";
         }
     }
-
-    // Check and cut the task
-    if (event.target.type === "checkbox") {
-        let label = document.querySelector(`label[for="${event.target.id}"]`);
-        if (label) {
-            label.style.textDecoration = event.target.checked ? "line-through" : "none";
-        }
-    }
 });
 
 //remove all task
